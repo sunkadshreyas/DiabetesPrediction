@@ -1,0 +1,32 @@
+body{
+    margin-left: 30%;
+    background-color: skyblue;
+}
+
+.content{
+    width: 50%;
+    margin-top: 2%;
+    padding : 2%;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: darkcyan;
+}
+
+.header{
+    margin-top: 3%;
+    color: darkblue;
+}
+
+
+@media (max-width : 825px){
+    body{
+        margin-left: 0%;
+        margin-top: 10%;
+    }
+    
+    .content{
+        margin-top: 10%;
+        width: 100%;
+    }
+}
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <title>Project</title>
+</head>
+<body>
+    <div class="header">
+        <h2>Diabetes Prediction</h2>
+    </div>
+    <div class="content">
+        <form autocomplete="off" method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <div class="form-group">
+                    {{ form.glucose.label(class="form-control-label") }}
+                    {% if form.glucose.errors %}
+                        {{ form.glucose(class="form-control form-control-sm is-invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.glucose.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.glucose(class="form-control form-control-md")}}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.blood_pressure.label(class="form-control-label") }}
+                    {% if form.blood_pressure.errors %}
+                        {{ form.blood_pressure(class="form-control form-control-sm is-invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.blood_pressure.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.blood_pressure(class="form-control form-control-md")}}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.insulin.label(class="form-control-label") }}
+                    {% if form.insulin.errors %}
+                        {{ form.insulin(class="form-control form-control-sm is-invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.insulin.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.insulin(class="form-control form-control-md")}}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.bmi.label(class="form-control-label") }}
+                    {% if form.bmi.errors %}
+                        {{ form.bmi(class="form-control form-control-sm is-invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.bmi.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.bmi(class="form-control form-control-md")}}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.age.label(class="form-control-label") }}
+                    {% if form.age.errors %}
+                        {{ form.age(class="form-control form-control-sm is-invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.age.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.age(class="form-control form-control-md")}}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary btn-lg")}}
+            </div>
+                <h5>{{ prediction_text }}</h5>
+        </form>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+
+</body>
+</html>
