@@ -23,7 +23,7 @@
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
                 <div class="form-group">
-                    {{ form.glucose.label(class="form-control-label") }}
+                    {{ form.glucose.label(class="form-control-label") }} (Range : 0-200)
                     {% if form.glucose.errors %}
                         {{ form.glucose(class="form-control form-control-sm is-invalid")}}
                         <div class="invalid-feedback">
@@ -36,7 +36,7 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    {{ form.blood_pressure.label(class="form-control-label") }}
+                    {{ form.blood_pressure.label(class="form-control-label") }} (Range : 0-100)
                     {% if form.blood_pressure.errors %}
                         {{ form.blood_pressure(class="form-control form-control-sm is-invalid")}}
                         <div class="invalid-feedback">
@@ -45,11 +45,11 @@
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.blood_pressure(class="form-control form-control-md")}}
+                        {{ form.blood_pressure(class="form-control form-control-md")}} 
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    {{ form.insulin.label(class="form-control-label") }}
+                    {{ form.insulin.label(class="form-control-label") }} (Range : 0-500)
                     {% if form.insulin.errors %}
                         {{ form.insulin(class="form-control form-control-sm is-invalid")}}
                         <div class="invalid-feedback">
@@ -62,9 +62,9 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    {{ form.bmi.label(class="form-control-label") }}
+                    {{ form.bmi.label(class="form-control-label") }} (Range : 0-50)
                     {% if form.bmi.errors %}
-                        {{ form.bmi(class="form-control form-control-sm is-invalid")}}
+                        {{ form.bmi(class="form-control form-control-sm is-invalid")}} 
                         <div class="invalid-feedback">
                             {% for error in form.bmi.errors %}
                                 <span>{{ error }}</span>
@@ -75,9 +75,9 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    {{ form.age.label(class="form-control-label") }}
+                    {{ form.age.label(class="form-control-label") }} (Range : 0-100)
                     {% if form.age.errors %}
-                        {{ form.age(class="form-control form-control-sm is-invalid")}}
+                        {{ form.age(class="form-control form-control-sm is-invalid")}} 
                         <div class="invalid-feedback">
                             {% for error in form.age.errors %}
                                 <span>{{ error }}</span>
